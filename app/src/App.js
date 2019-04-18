@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import drizzle from './drizzle';
 
 class App extends Component {
   render() {
+    console.log(drizzle);
     return (
       <div className="App">
         <header className="App-header">
