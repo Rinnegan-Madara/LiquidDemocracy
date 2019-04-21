@@ -14,4 +14,4 @@ const options  = {
 const store = generateStore(options);
 const drizzle = new Drizzle(options,store);
 
-export default drizzle;
+export default options;
