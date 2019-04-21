@@ -1,4 +1,3 @@
-import { Drizzle, generateStore } from 'drizzle';
 import LiquidDemocracy from "./contracts/LiquidDemocracy";
 
 const options  = {
@@ -10,8 +9,5 @@ const options  = {
         }
     }
 };
-
-const store = generateStore(options);
-const drizzle = new Drizzle(options,store);
 
 export default options;
