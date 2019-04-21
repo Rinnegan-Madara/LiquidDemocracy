@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Drizzle, generateStore } from 'drizzle';
 import { DrizzleContext } from 'drizzle-react';
 import drizzleOptions from '../drizzle';
+import AppRouter from '../AppRouter/AppRouter';
 import Container from './Container';
 
 const drizzleStore = generateStore(drizzleOptions);
@@ -11,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <DrizzleContext.Provider drizzle={drizzle}>
-        <Container/>
+        <AppRouter />
       </DrizzleContext.Provider>
     );
   }
