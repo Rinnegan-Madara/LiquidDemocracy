@@ -3,7 +3,7 @@ import { Drizzle, generateStore } from 'drizzle';
 import { DrizzleContext } from 'drizzle-react';
 import drizzleOptions from '../drizzle';
 import AppRouter from '../AppRouter/AppRouter';
-import Container from './Container';
+// import Container from './Container';
 
 const drizzleStore = generateStore(drizzleOptions);
 const drizzle = new Drizzle(drizzleOptions, drizzleStore);
