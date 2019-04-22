@@ -9,13 +9,37 @@ export default class ViewMembers extends Component{
     componentDidMount(){
         const { web3, contracts } = this.props.drizzle;
         const { LiquidDemocracy } = contracts;
-        console.log(LiquidDemocracy);
+        const { abi, address } = LiquidDemocracy;
+        const contract = new web3.eth.Contract(abi,address);
+
+        this.setState({web3,contract});
+        let events= [];
+        contract.events.memberAdded(
+            {
+                fromBlock:0
+            },
+            (error,event) => {
+                // console.log(event);
+                events.push(event);
+                this.setState({events});
+            }
+        );
+        // console.log(contract.events);
     }
     render(){
-        console.log(this.props);
+        let { events } = this.state;
         return(
             <Fragment>
                 Hello!
+                <ul>
+                    {
+                        events.map((event)=>(
+                            <li key={event.returnValues[0]}>
+                            {event.returnValues[0]}
+                            </li>
+                        ))
+                    }
+                </ul>
             </Fragment>
         );
     }

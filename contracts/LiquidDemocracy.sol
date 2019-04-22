@@ -18,7 +18,7 @@ contract LiquidDemocracy{
     event memberAdded(address);
     event proposalApproved(string,uint);
     
-    constructor()public {
+    constructor() public {
         admin = msg.sender;
         members[admin] = true;
         nextProposalId=1;
