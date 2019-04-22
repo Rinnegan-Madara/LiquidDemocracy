@@ -6,6 +6,7 @@ import Header from '../components/Header';
 import Dashboard from '../components/Dashboard';
 import AddMember from '../components/AddMember';
 import ViewMembers from '../components/ViewMembers';
+import AddProposal from '../components/AddProposal';
 
 const AppRouter = (props) => (
     <DrizzleContext.Consumer>
@@ -25,6 +26,11 @@ const AppRouter = (props) => (
                                 exact={true} />
                             <Route path='/MembersList' 
                                 render={()=>(<ViewMembers
+                                    drizzle={drizzle}
+                                    drizzleState={drizzleState}/>)}
+                                exact={true}/>
+                            <Route path='/AddProposal' 
+                                render={()=>(<AddProposal
                                     drizzle={drizzle}
                                     drizzleState={drizzleState}/>)}
                                 exact={true}/>
