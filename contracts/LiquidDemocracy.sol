@@ -26,7 +26,8 @@ contract LiquidDemocracy{
     }
 
     function addMember(address _member)external onlyAdmin() {
-        require(msg.sender==admin);
+        require(msg.sender==admin, "only admin can add new members");
+        require(members[_member] == false, "this person is already a member");
         members[_member] = true;
         numMembers++;
         emit memberAdded(_member);
