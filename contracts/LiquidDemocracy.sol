@@ -8,12 +8,12 @@ contract LiquidDemocracy{
         uint expiry;
         bool approved;
     }
-    address admin;
-    uint nextProposalId;
-    uint numMembers;
-    mapping(address=>bool) members;
-    mapping(uint=>Proposal)public proposals;
-    mapping(address=>mapping(uint=>bool))voted;
+    address public admin;
+    uint public nextProposalId;
+    uint public numMembers;
+    mapping(address=>bool) public members;
+    mapping(uint=>Proposal) public proposals;
+    mapping(address=>mapping(uint=>bool)) public voted;
     
     event memberAdded(address);
     event proposalApproved(string,uint);

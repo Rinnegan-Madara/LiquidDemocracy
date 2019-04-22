@@ -7,6 +7,8 @@ const Header = () => (
             exact={true}>Dashboard</NavLink>
         <NavLink to='/AddMember' activeClassName='is-active' 
             exact={true}>Add Member</NavLink>
+        <NavLink to='/MembersList' activeClassName='is-active' 
+            exact={true}>View Members</NavLink>
     </header>
 );
 

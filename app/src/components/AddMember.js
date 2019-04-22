@@ -25,12 +25,8 @@ class AddMember extends Component{
         this.setState({txId});
     }
     render(){
-        // console.log(this.props);
-        // var transactions, txHash, transactionStack;
-        // if(this.props.drizzleState !== null){
-            const { transactions, transactionStack } = this.props.drizzleState;
-            const txHash = transactionStack[this.state.txId];
-        // }
+        const { transactions, transactionStack } = this.props.drizzleState;
+        const txHash = transactionStack[this.state.txId];
         return(
             <div id="form">
                 <form>
